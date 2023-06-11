@@ -68,6 +68,12 @@ func ProcesoUsers(body string, path string, method string, user string, id strin
 }
 
 func ProcesoProducts(body string, path string, method string, user string, id int, request events.APIGatewayV2HTTPRequest) (int, string) {
+	switch method {
+	case "POST":
+		return routers.InsertProduct(body, user)
+	case "PUT":
+		return routers.UpdateProduct(body, user, id)
+	}
 	return 400, "Method Invalid"
 }
 
@@ -77,6 +83,10 @@ func ProcesoCategory(body string, path string, method string, user string, id in
 		return routers.InsertCategory(body, user)
 	case "PUT":
 		return routers.UpdateCategory(body, user, id)
+	case "DELETE":
+		return routers.DeleteCategory(body, user, id)
+	case "GET":
+		return routers.SelectCategories(body, request)
 	}
 	return 400, "Method Invalid"
 }
