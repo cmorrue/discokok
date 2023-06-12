@@ -38,3 +38,29 @@ type ProductResp struct {
 	TotalItems int       `json:"totalItems"`
 	Data       []Product `json:"data"`
 }
+
+type User struct {
+	UserUUID      string `json:"userUUID"`
+	UserEmail     string `json:"userEmail"`
+	UserFirstName string `json:"userFirstName"`
+	UserLastName  string `json:"userLastName"`
+	UserStatus    int    `json:"userStatus"`
+	UserDateAdd   string `json:"userDateAdd"`
+	UserDateUpd   string `json:"userDateUpd"`
+}
+
+type ListUsers struct {
+	TotalItems int    `json:"totalItems"`
+	Data       []User `json:"data"`
+}
+
+type Address struct {
+	AddId         int    `json:"addId"`
+	AddTitle      string `json:"addTitle"`
+	AddName       string `json:"addName"`
+	AddAddress    string `json:"addAddress"`
+	AddCity       string `json:"addCity"`
+	AddState      string `json:"addState"`
+	AddPostalCode string `json:"addPostalCode"`
+	AddPhone      string `json:"addPhone"`
+}

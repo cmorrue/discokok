@@ -123,6 +123,7 @@ func DeleteProduct(id int) error {
 		return err
 	}
 
+	fmt.Println(sentencia)
 	fmt.Println("Delete Product > Ejecución Exitosa")
 	return nil
 }
